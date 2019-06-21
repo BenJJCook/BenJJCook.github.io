@@ -1,0 +1,70 @@
+<!doctype html>
+<html>
+	<head>
+		<script
+	  src="https://code.jquery.com/jquery-3.4.1.min.js"
+	  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+	  crossorigin="anonymous"></script>
+		<script type="text/javascript" src="circledem.js" defer></script>
+		
+		<style>
+			body {
+				background: #888;
+				overflow: hidden;
+				margin: 0;
+				font-family:Calibri;
+				font-size:1.1em;
+			}
+			canvas {
+				background: #fff;
+				border: 1px solid black;
+				display: block;
+			}
+			.picon {
+				width: 1em;
+				height: 1em;
+				display: inline-block;
+				border-radius: 1em;
+			}
+			#tools {
+				background:#DDD;
+				border: 1px solid black;
+				padding: 1em;
+			}
+			#tools>div {
+				margin-bottom: 1em;
+			}
+			
+			.bold {
+				font-weight: bold;
+			}
+			
+			#lSide, #rSide {
+				display: inline-block;
+				width: 49%;
+				vertical-align:top;
+			}
+			input[type=button] {
+				font-weight: bold;
+			}
+		</style>
+	</head>
+	
+	<body>
+		<canvas id="canvas"></canvas><br/>
+		<div id="tools">
+			<div id="lSide">
+				<div><input id="refocusBtn" type="button" value="Refocus Top"><br/>
+				<span>Zoom Level: </span><input id="zoomLvl" type="text"><input id="zoomBtn" type="button" value="Zoom"><br/></div><br/>
+				<div><span>Current Planet Size: </span><span id="curPlanetSize">6371km</span><br/>
+				<span>Planet Radius (km): </span><input id="pRadius" type="text"><input id="pRadiusBtn" type="button" value="Change Radius"></div><br/><br/>
+			</div>
+			<div id="rSide">
+				<div><span style="font-weight:bold;">Add New Point</span><br/>
+				<span>Height (km): </span><input id="newx" type="hidden" value="0"><input id="newy" type="text"><span>  Colour (hex): <input id="newcol" type="text" value="#FF0000"><input id="addBtn" type="button" value="Add"></div>
+				<div id="details" style="margin-top:1.1em;">
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
